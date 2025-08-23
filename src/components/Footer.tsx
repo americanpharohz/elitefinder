@@ -63,7 +63,11 @@ const Footer = () => {
 
         <div className="border-t border-navy-800 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
+<<<<<<< HEAD
             © 2025 Elite Finder Services. All rights reserved.
+=======
+            © 2024 Elite Finder Services. All rights reserved.
+>>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <Link to="/contact" className="text-gray-400 hover:text-gold-400 text-sm transition-colors">Privacy Policy</Link>

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+<<<<<<< HEAD
 
 @keyframes fade-in {
   from {
@@ -27,3 +28,5 @@
 .animate-slide-in {
   animation: slide-in 1s ease;
 }
+=======
+>>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
