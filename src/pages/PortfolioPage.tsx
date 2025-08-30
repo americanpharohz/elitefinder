@@ -11,17 +11,10 @@ const PortfolioPage = () => {
       description: 'Ultra-rare Japanese promotional card with PSA Grade 10 certification.',
       client: 'Private Collector, Tokyo',
       testimonial: 'Elite Finder delivered what I thought was impossible. The authentication process was flawless.',
-<<<<<<< HEAD
       commission: '$50,000',
       timeframe: '3 weeks',
       rarity: 'Only 39 known to exist',
       image: 'https://i.etsystatic.com/39266313/r/il/0c10a3/5274156626/il_570xN.5274156626_a7n7.jpg',
-=======
-      commission: '$15,000',
-      timeframe: '3 weeks',
-      rarity: 'Only 39 known to exist',
-      image: 'https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -34,11 +27,7 @@ const PortfolioPage = () => {
       commission: '$85,000',
       timeframe: '6 months',
       rarity: 'Only 5 ever made',
-<<<<<<< HEAD
       image: 'https://hips.hearstapps.com/roadandtrack/assets/16/34/1472141190-f1lm-front.jpg',
-=======
-      image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -48,17 +37,10 @@ const PortfolioPage = () => {
       description: 'Custom-built 180ft superyacht with helicopter pad and submarine garage.',
       client: 'Tech Entrepreneur, Singapore',
       testimonial: 'Found my dream yacht through their exclusive network. The entire process was seamless.',
-<<<<<<< HEAD
       commission: '$1,120,000',
       timeframe: '4 months',
       rarity: 'Custom one-off design',
       image: 'https://yachtharbour.com/static/uploads/4087_3a61b.jpeg',
-=======
-      commission: '$120,000',
-      timeframe: '4 months',
-      rarity: 'Custom one-off design',
-      image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
     {
@@ -71,11 +53,7 @@ const PortfolioPage = () => {
       commission: '$200,000',
       timeframe: '8 weeks',
       rarity: 'Less than 0.02% of all diamonds',
-<<<<<<< HEAD
       image: 'https://cdn.rainbowsapphire.com/wp-content/uploads/2023/06/DA262_1-1.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
     {
@@ -88,11 +66,7 @@ const PortfolioPage = () => {
       commission: '$45,000',
       timeframe: '10 weeks',
       rarity: 'Unique piece',
-<<<<<<< HEAD
       image: 'https://hodinkee.imgix.net/uploads/article/hero_image/2494/new_hero_2.jpg?ixlib=rails-1.1.0&fm=jpg&q=55&auto=format&usm=12',
-=======
-      image: 'https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -105,11 +79,7 @@ const PortfolioPage = () => {
       commission: '$150,000',
       timeframe: '7 months',
       rarity: 'Historic classification',
-<<<<<<< HEAD
       image: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/34/2012/10/000002a78-margaux.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
     {
@@ -122,11 +92,7 @@ const PortfolioPage = () => {
       commission: '$35,000',
       timeframe: '5 weeks',
       rarity: 'Only 6 known PSA 9 examples',
-<<<<<<< HEAD
       image: 'https://www.milehighcardco.com/ItemImages/000006/4_52t311mantle5_lg.jpeg',
-=======
-      image: 'https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -136,17 +102,10 @@ const PortfolioPage = () => {
       description: 'Limited edition Regera with exclusive Ghost aerodynamics package.',
       client: 'Supercar Enthusiast, California',
       testimonial: 'They tracked down the exact specification I wanted from a private owner. Amazing dedication.',
-<<<<<<< HEAD
       commission: '$175,000',
       timeframe: '12 weeks',
       rarity: 'Only 80 Regeras produced',
       image: 'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F01%2Fkoenigsegg-regera-gooding-and-companys-geared-online-scottsdale-edition-swedish-hypercar-auction-0.jpg?w=960&cbr=1&q=90&fit=max',
-=======
-      commission: '$75,000',
-      timeframe: '12 weeks',
-      rarity: 'Only 80 Regeras produced',
-      image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
     {
@@ -156,17 +115,10 @@ const PortfolioPage = () => {
       description: 'Former royal yacht with impeccable provenance and full documentation.',
       client: 'Private Family Office, London',
       testimonial: 'The historical significance and condition were exactly as described. Flawless transaction.',
-<<<<<<< HEAD
       commission: '$1,950,000',
       timeframe: '5 months',
       rarity: 'Royal provenance',
       image: 'https://photos.superyachtapi.com/download/366613/large',
-=======
-      commission: '$95,000',
-      timeframe: '5 months',
-      rarity: 'Royal provenance',
-      image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -179,11 +131,7 @@ const PortfolioPage = () => {
       commission: '$55,000',
       timeframe: '14 weeks',
       rarity: 'Documented Paul Newman dial',
-<<<<<<< HEAD
       image: 'https://www.mercury.ru/upload/news/photo/8_001.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
     {
@@ -193,17 +141,10 @@ const PortfolioPage = () => {
       description: 'Private 20-acre oceanfront estate with deep water dock and guest cottage.',
       client: 'Tech Executive, Boston',
       testimonial: 'Found our family\'s forever retreat in a location we thought was impossible to access.',
-<<<<<<< HEAD
       commission: '$210,000',
       timeframe: '6 months',
       rarity: 'Waterfront zoning rights',
       image: 'https://images.squarespace-cdn.com/content/v1/58487dc4b8a79b6d02499b60/1667516937629-VUC2TED8HB6E3HANUUNO/Francis+York+Waterfront+Estate+on+Nantucket+Island+13.png',
-=======
-      commission: '$110,000',
-      timeframe: '6 months',
-      rarity: 'Waterfront zoning rights',
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2023',
     },
     {
@@ -216,11 +157,7 @@ const PortfolioPage = () => {
       commission: '$180,000',
       timeframe: '16 weeks',
       rarity: 'No heat treatment',
-<<<<<<< HEAD
       image: 'https://i.pinimg.com/736x/40/5e/1d/405e1d99c96903f2af3451cc7bf0f953.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       year: '2024',
     },
   ];
@@ -233,28 +170,16 @@ const PortfolioPage = () => {
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold font-serif mb-6">Success Stories</h1>
             <p className="text-xl text-gray-300 mb-8">
-<<<<<<< HEAD
               Over $190.2 million in successful acquisitions across rare collectibles, luxury vehicles, 
-=======
-              Over $8.2 million in successful acquisitions across rare collectibles, luxury vehicles, 
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
               exclusive real estate, and fine jewelry. Each case study represents our commitment to excellence.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-navy-800/50 rounded-xl p-6">
               <div className="text-center">
-<<<<<<< HEAD
                 <div className="text-3xl font-bold text-gold-400">$12.7M+</div>
                 <div className="text-sm text-gray-300">Total Acquisitions</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-gold-400">$4.2M+</div>
-=======
-                <div className="text-3xl font-bold text-gold-400">$8.2M+</div>
-                <div className="text-sm text-gray-300">Total Acquisitions</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-gold-400">$1.1M+</div>
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
                 <div className="text-sm text-gray-300">Commissions Earned</div>
               </div>
               <div className="text-center">

@@ -14,11 +14,7 @@ const HomePage = () => {
     {
       title: 'Rare Collectibles',
       description: 'Vintage Pokémon cards, limited art pieces, and exclusive memorabilia',
-<<<<<<< HEAD
       image: 'https://www.wargamer.com/wp-content/sites/wargamer/2025/06/rare-pokemon-cards-disco-holo-charizard-test-550x309.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
     },
     {
       title: 'Luxury Vehicles',
@@ -28,11 +24,7 @@ const HomePage = () => {
     {
       title: 'Exclusive Yachts',
       description: 'Custom superyachts and rare maritime vessels',
-<<<<<<< HEAD
       image: 'https://robbreport.com/wp-content/uploads/2022/07/StellaDelSud4.jpg?w=1000',
-=======
-      image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
     },
   ];
 
@@ -70,11 +62,7 @@ const HomePage = () => {
             </div>
             <div className="animate-slide-in">
               <img
-<<<<<<< HEAD
                 src="https://ucarecdn.com/558c76fb-2ba0-41c8-a5ca-b6092dca8ad8/"
-=======
-                src="https://images.pexels.com/photos/1034582/pexels-photo-1034582.jpeg"
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
                 alt="Luxury items collection"
                 className="w-full rounded-2xl shadow-2xl"
               />

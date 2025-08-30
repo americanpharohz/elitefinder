@@ -63,16 +63,30 @@ const ContactPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      // Replace '/api/contact' with your backend endpoint
+      const response = await fetch('https://elitefinder.vip/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        // Optionally handle error response
+        setErrors(prev => ({ ...prev, submit: 'Submission failed. Please try again.' }));
+      }
+    } catch (error) {
+      setErrors(prev => ({ ...prev, submit: 'Network error. Please try again.' }));
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 2000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -135,21 +149,21 @@ const ContactPage = () => {
                   <Phone className="h-6 w-6 text-gold-500 mr-4" />
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-gray-300">+1 (555) 123-4567</div>
+                    <div className="text-gray-300">+1 (929) 344-2202</div>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-6 w-6 text-gold-500 mr-4" />
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-gray-300">elite@finderservices.com</div>
+                    <div className="text-gray-300">info@elitefinder.vip</div>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-6 w-6 text-gold-500 mr-4" />
                   <div>
                     <div className="font-semibold">Offices</div>
-                    <div className="text-gray-300">New York • London • Dubai</div>
+                    <div className="text-gray-300">Worldwide</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -336,6 +350,8 @@ const ContactPage = () => {
                     )}
                   </button>
                 </div>
+
+                {errors.submit && <p className="text-red-500 text-sm mt-2">{errors.submit}</p>}
               </form>
               
               <div className="mt-6 p-4 bg-gold-50 rounded-lg">

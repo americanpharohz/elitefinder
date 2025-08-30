@@ -7,33 +7,21 @@ const ServicesPage = () => {
     {
       title: 'Rare Pokémon Cards',
       description: 'Vintage cards, tournament prizes, and limited editions from the world\'s most exclusive collections.',
-<<<<<<< HEAD
       image: 'https://pokeflip.com/cdn/shop/articles/Most_Valuable_Pokemon_Cards_of_All_Time.jpg?v=1714840666',
-=======
-      image: 'https://images.pexels.com/photos/1038916/pexels-photo-1038916.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       features: ['1st Edition Base Set', 'Japanese Tournament Promos', 'Artist Proof Cards', 'Error Cards'],
       commission: '1-2%',
     },
     {
       title: 'Hypercars & Supercars',
       description: 'Limited production vehicles from Ferrari, McLaren, Bugatti, and other prestigious manufacturers.',
-<<<<<<< HEAD
       image: 'https://supercarblondie.com/wp-content/uploads/What-makes-a-car-a-supercar.webp',
-=======
-      image: 'https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       features: ['LaFerrari', 'McLaren P1', 'Bugatti Chiron', 'Koenigsegg Regera'],
       commission: '2-3%',
     },
     {
       title: 'Luxury Yachts',
       description: 'Custom superyachts, vintage vessels, and exclusive maritime properties.',
-<<<<<<< HEAD
       image: 'https://images.stockcake.com/public/8/a/1/8a17d3dc-84b8-4706-bef6-2e4088627c53_large/luxurious-yacht-twilight-stockcake.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1001682/pexels-photo-1001682.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       features: ['Custom Superyachts', 'Historic Vessels', 'Racing Yachts', 'Expedition Yachts'],
       commission: '1-2%',
     },
@@ -47,22 +35,14 @@ const ServicesPage = () => {
     {
       title: 'High-End Watches',
       description: 'Vintage timepieces, limited editions, and exclusive complications from top manufacturers.',
-<<<<<<< HEAD
       image: 'https://i0.wp.com/aristeaux.com/wp-content/uploads/2024/02/Luxury-Watches-Brands-Wiki-3.webp?resize=1024%2C1024',
-=======
-      image: 'https://images.pexels.com/photos/1697214/pexels-photo-1697214.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       features: ['Patek Philippe', 'Rolex Daytona', 'Audemars Piguet', 'Vintage Complications'],
       commission: '1-3%',
     },
     {
       title: 'Off-Market Real Estate',
       description: 'Exclusive properties, historic estates, and luxury developments not available publicly.',
-<<<<<<< HEAD
       image: 'https://www.realestate-tokyo.com/media/15156/off-market-properties.jpg',
-=======
-      image: 'https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg',
->>>>>>> 8f5f6e2e487595727e7681a73c760d85e6533647
       features: ['Private Islands', 'Historic Mansions', 'Luxury Penthouses', 'Investment Properties'],
       commission: '1-2%',
     },
