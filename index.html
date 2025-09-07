@@ -10,9 +10,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Fallback styles in case CSS doesn't load */
+      body { 
+        font-family: Arial, sans-serif; 
+        margin: 0; 
+        padding: 20px; 
+        background: #f0f0f0;
+      }
+      #root { 
+        min-height: 100vh; 
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .loading {
+        text-align: center;
+        padding: 50px;
+        font-size: 18px;
+        color: #666;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading">Loading Elite Finder...</div>
+    </div>
+    <script>
+      console.log('HTML loaded, checking for React...');
+      
+      // Debug information
+      console.log('Current URL:', window.location.href);
+      console.log('Base URL:', window.location.origin);
+      console.log('Pathname:', window.location.pathname);
+      
+      // Check if script loads
+      setTimeout(() => {
+        const root = document.getElementById('root');
+        if (root && root.innerHTML.includes('Loading Elite Finder...')) {
+          console.error('React app did not load - JavaScript bundle may have failed');
+          root.innerHTML = `
+            <div style="padding: 20px; background: #ffebee; border: 1px solid #f44336; border-radius: 4px;">
+              <h2 style="color: #d32f2f; margin-top: 0;">React App Failed to Load</h2>
+              <p>The JavaScript bundle did not load properly. Check the browser console for errors.</p>
+              <p><strong>Current URL:</strong> ${window.location.href}</p>
+              <p><strong>Expected script path:</strong> ./src/main.tsx</p>
+            </div>
+          `;
+        }
+      }, 3000);
+    </script>
     <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>

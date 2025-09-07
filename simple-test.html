@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Test - Elite Finder</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #1a2236, #151a2b);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .test { 
+            background: rgba(255,255,255,0.05); 
+            padding: 15px; 
+            margin: 15px 0; 
+            border-radius: 5px; 
+            border-left: 4px solid #FFD700;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #FFD700;
+        }
+        .logo p {
+            margin: 5px 0 0 0;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>🔍 Elite Finder</h1>
+            <p>Luxury Acquisition Specialists</p>
+        </div>
+        
+        <div class="test">
+            <h3>🌐 Basic HTML Test</h3>
+            <p class="success">✅ If you can see this, basic HTML is working</p>
+        </div>
+        
+        <div class="test">
+            <h3>📱 JavaScript Test</h3>
+            <p id="js-test" class="error">❌ JavaScript not loaded</p>
+        </div>
+        
+        <div class="test">
+            <h3>🎨 CSS Test</h3>
+            <p class="success">✅ If this has styling, CSS is working</p>
+        </div>
+        
+        <div class="test">
+            <h3>🔗 Navigation Test</h3>
+            <a href="./index.html" style="color: #FFD700; text-decoration: none;">← Back to Main App</a>
+        </div>
+        
+        <div class="test">
+            <h3>📊 Debug Information</h3>
+            <div id="debug-info"></div>
+        </div>
+    </div>
+    
+    <script>
+        console.log('Simple test page loaded');
+        
+        // Test JavaScript
+        document.getElementById('js-test').innerHTML = '✅ JavaScript is working';
+        document.getElementById('js-test').className = 'success';
+        
+        // Debug information
+        const debugInfo = document.getElementById('debug-info');
+        debugInfo.innerHTML = `
+            <p><strong>Current URL:</strong> ${window.location.href}</p>
+            <p><strong>Origin:</strong> ${window.location.origin}</p>
+            <p><strong>Pathname:</strong> ${window.location.pathname}</p>
+            <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+            <p><strong>Timestamp:</strong> ${new Date().toISOString()}</p>
+        `;
+        
+        console.log('Debug info populated');
+    </script>
+</body>
+</html>

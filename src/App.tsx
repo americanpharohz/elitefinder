@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -8,9 +8,13 @@ import PortfolioPage from './pages/PortfolioPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 
+console.log('📱 App component loading...');
+
 function App() {
+  console.log('🏠 App component rendering...');
+  
   return (
-    <Router basename="/elitefinder">
+    <Router>
       <div className="min-h-screen bg-white">
         <Header />
         <main>
@@ -27,5 +31,7 @@ function App() {
     </Router>
   );
 }
+
+console.log('✅ App component defined');
 
 export default App;
