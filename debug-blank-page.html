@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Elite Finder</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .debug { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Elite Finder - Debug Page</h1>
+    <div class="debug">
+        <h3>Basic HTML Test</h3>
+        <p class="success">✅ If you can see this, basic HTML is working</p>
+    </div>
+    
+    <div class="debug">
+        <h3>JavaScript Test</h3>
+        <p id="js-test" class="error">❌ JavaScript not loaded</p>
+    </div>
+    
+    <div class="debug">
+        <h3>Navigation Test</h3>
+        <a href="./index.html">← Back to Main App</a>
+    </div>
+    
+    <script>
+        document.getElementById('js-test').innerHTML = '✅ JavaScript is working';
+        document.getElementById('js-test').className = 'success';
+        
+        console.log('Debug page loaded successfully');
+        console.log('Current URL:', window.location.href);
+        console.log('Base URL:', window.location.origin);
+    </script>
+</body>
+</html>
