@@ -35,6 +35,7 @@ const Footer = () => {
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Rare Collectibles</Link></li>
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Luxury Vehicles</Link></li>
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Exclusive Yachts</Link></li>
+              <li><Link to="/services" className="hover:text-gold-400 transition-colors">Private Jets</Link></li>
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Fine Jewelry</Link></li>
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Premium Watches</Link></li>
               <li><Link to="/services" className="hover:text-gold-400 transition-colors">Elite Real Estate</Link></li>

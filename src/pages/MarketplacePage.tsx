@@ -29,6 +29,7 @@ const MarketplacePage = () => {
     'Rare Collectibles',
     'Luxury Vehicles',
     'Exclusive Yachts',
+    'Private Jets',
     'Fine Jewelry',
     'High-End Watches',
     'Real Estate',

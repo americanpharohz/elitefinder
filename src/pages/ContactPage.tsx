@@ -21,6 +21,7 @@ const ContactPage = () => {
     'Rare Collectibles',
     'Luxury Vehicles',
     'Exclusive Yachts',
+    'Private Jets',
     'Fine Jewelry & Gemstones',
     'High-End Watches',
     'Off-Market Real Estate',

@@ -26,6 +26,13 @@ const ServicesPage = () => {
       commission: '1-2%',
     },
     {
+      title: 'Private Jets',
+      description: 'Luxury aircraft, corporate jets, and exclusive aviation opportunities.',
+      image: 'https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg',
+      features: ['Corporate Jets', 'Light Aircraft', 'Heavy Jets', 'Turboprops'],
+      commission: '1-3%',
+    },
+    {
       title: 'Rare Diamonds',
       description: 'Investment-grade diamonds, colored stones, and historically significant pieces.',
       image: 'https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg',
