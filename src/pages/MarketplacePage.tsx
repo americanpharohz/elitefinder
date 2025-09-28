@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Search, Filter, Edit, Trash2, Eye, EyeOff, Lock, LogOut } from 'lucide-react';
+import { Plus, Search, Filter, CreditCard as Edit, Trash2, Eye, EyeOff, Lock, LogOut } from 'lucide-react';
 
 interface Listing {
   id: string;
