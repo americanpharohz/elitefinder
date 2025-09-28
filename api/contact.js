@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
 
   const mailOptions = {
     from: `"Elite Finder Contact" <${process.env.SMTP_USER}>`,
-    to: "info@elitefinder.vip",
+    to: "info@elitefinder.com",
     subject: "New Confidential Inquiry",
     text: `
 Name: ${name}
