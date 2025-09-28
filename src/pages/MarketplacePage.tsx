@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Plus, Search, Filter, CreditCard as Edit, Trash2, Eye, EyeOff, Lock, LogOut } from 'lucide-react';
+import { Search, Filter, Lock, LogOut, Eye, EyeOff, Plus, Edit, Trash2 } from 'lucide-react';
 
 interface Listing {
   id: string;
@@ -15,6 +15,7 @@ interface Listing {
 
 const MarketplacePage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [loginForm, setLoginForm] = useState({ username: '', password: '' });
   const [loginError, setLoginError] = useState('');
   const [listings, setListings] = useState<Listing[]>([]);
@@ -71,6 +72,7 @@ const MarketplacePage = () => {
       setIsAuthenticated(true);
       sessionStorage.setItem('marketplace-auth', 'true');
       setLoginError('');
+      setShowAdminLogin(false);
     } else {
       setLoginError('Invalid credentials. Please try again.');
     }
@@ -160,70 +162,16 @@ const MarketplacePage = () => {
     ));
   };
 
+  // Filter listings - only show active listings to public users
   const filteredListings = listings.filter(listing => {
     const matchesSearch = listing.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          listing.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = filterType === 'all' || listing.type === filterType;
     const matchesCategory = filterCategory === 'all' || listing.category === filterCategory;
+    const isActiveOrAdmin = isAuthenticated || listing.status === 'active';
     
-    return matchesSearch && matchesType && matchesCategory;
+    return matchesSearch && matchesType && matchesCategory && isActiveOrAdmin;
   });
-
-  // Login Form
-  if (!isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
-          <div className="text-center mb-8">
-            <Lock className="h-12 w-12 text-navy-900 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-navy-900">Private Marketplace</h1>
-            <p className="text-gray-600">Admin access required</p>
-          </div>
-          
-          <form onSubmit={handleLogin} className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Username
-              </label>
-              <input
-                type="text"
-                value={loginForm.username}
-                onChange={(e) => setLoginForm(prev => ({ ...prev, username: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent"
-                required
-              />
-            </div>
-            
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Password
-              </label>
-              <input
-                type="password"
-                value={loginForm.password}
-                onChange={(e) => setLoginForm(prev => ({ ...prev, password: e.target.value }))}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent"
-                required
-              />
-            </div>
-            
-            {loginError && (
-              <div className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">
-                {loginError}
-              </div>
-            )}
-            
-            <button
-              type="submit"
-              className="w-full bg-navy-900 text-white py-3 rounded-lg font-semibold hover:bg-navy-800 transition-colors"
-            >
-              Login
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -232,24 +180,41 @@ const MarketplacePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold text-navy-900">Private Marketplace</h1>
-              <p className="text-gray-600">Manage your seller and buyer needed listings</p>
+              <h1 className="text-2xl font-bold text-navy-900">Elite Marketplace</h1>
+              <p className="text-gray-600">
+                {isAuthenticated 
+                  ? 'Manage your seller and buyer needed listings' 
+                  : 'Browse exclusive luxury items and services'
+                }
+              </p>
             </div>
             <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowAddForm(true)}
-                className="bg-navy-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-navy-800 transition-colors flex items-center"
-              >
-                <Plus className="h-4 w-4 mr-2" />
-                Add Listing
-              </button>
-              <button
-                onClick={handleLogout}
-                className="text-gray-600 hover:text-navy-900 flex items-center"
-              >
-                <LogOut className="h-4 w-4 mr-2" />
-                Logout
-              </button>
+              {isAuthenticated ? (
+                <>
+                  <button
+                    onClick={() => setShowAddForm(true)}
+                    className="bg-navy-900 text-white px-4 py-2 rounded-lg font-semibold hover:bg-navy-800 transition-colors flex items-center"
+                  >
+                    <Plus className="h-4 w-4 mr-2" />
+                    Add Listing
+                  </button>
+                  <button
+                    onClick={handleLogout}
+                    className="text-gray-600 hover:text-navy-900 flex items-center"
+                  >
+                    <LogOut className="h-4 w-4 mr-2" />
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={() => setShowAdminLogin(true)}
+                  className="text-gray-600 hover:text-navy-900 flex items-center text-sm"
+                >
+                  <Lock className="h-4 w-4 mr-2" />
+                  Admin Login
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -307,8 +272,71 @@ const MarketplacePage = () => {
           </div>
         </div>
 
+        {/* Admin Login Modal */}
+        {showAdminLogin && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+              <div className="text-center mb-6">
+                <Lock className="h-12 w-12 text-navy-900 mx-auto mb-4" />
+                <h2 className="text-2xl font-bold text-navy-900">Admin Login</h2>
+                <p className="text-gray-600">Access marketplace management</p>
+              </div>
+              
+              <form onSubmit={handleLogin} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Username
+                  </label>
+                  <input
+                    type="text"
+                    value={loginForm.username}
+                    onChange={(e) => setLoginForm(prev => ({ ...prev, username: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Password
+                  </label>
+                  <input
+                    type="password"
+                    value={loginForm.password}
+                    onChange={(e) => setLoginForm(prev => ({ ...prev, password: e.target.value }))}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy-500 focus:border-transparent"
+                    required
+                  />
+                </div>
+                
+                {loginError && (
+                  <div className="text-red-600 text-sm bg-red-50 p-3 rounded-lg">
+                    {loginError}
+                  </div>
+                )}
+                
+                <div className="flex space-x-4">
+                  <button
+                    type="button"
+                    onClick={() => setShowAdminLogin(false)}
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="flex-1 bg-navy-900 text-white py-3 rounded-lg font-semibold hover:bg-navy-800 transition-colors"
+                  >
+                    Login
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        )}
+
         {/* Add/Edit Form Modal */}
-        {showAddForm && (
+        {showAddForm && isAuthenticated && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white rounded-xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
               <h2 className="text-2xl font-bold text-navy-900 mb-6">
@@ -466,35 +494,39 @@ const MarketplacePage = () => {
                     }`}>
                       {listing.type === 'seller-needed' ? 'Seller Needed' : 'Buyer Needed'}
                     </span>
-                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                      listing.status === 'active' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-gray-100 text-gray-800'
-                    }`}>
-                      {listing.status}
-                    </span>
+                    {isAuthenticated && (
+                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        listing.status === 'active' 
+                          ? 'bg-green-100 text-green-800' 
+                          : 'bg-gray-100 text-gray-800'
+                      }`}>
+                        {listing.status}
+                      </span>
+                    )}
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <button
-                      onClick={() => toggleListingStatus(listing.id)}
-                      className="text-gray-400 hover:text-gray-600"
-                      title={listing.status === 'active' ? 'Deactivate' : 'Activate'}
-                    >
-                      {listing.status === 'active' ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
-                    </button>
-                    <button
-                      onClick={() => handleEditListing(listing)}
-                      className="text-gray-400 hover:text-navy-600"
-                    >
-                      <Edit className="h-4 w-4" />
-                    </button>
-                    <button
-                      onClick={() => handleDeleteListing(listing.id)}
-                      className="text-gray-400 hover:text-red-600"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
-                  </div>
+                  {isAuthenticated && (
+                    <div className="flex items-center space-x-2">
+                      <button
+                        onClick={() => toggleListingStatus(listing.id)}
+                        className="text-gray-400 hover:text-gray-600"
+                        title={listing.status === 'active' ? 'Deactivate' : 'Activate'}
+                      >
+                        {listing.status === 'active' ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+                      </button>
+                      <button
+                        onClick={() => handleEditListing(listing)}
+                        className="text-gray-400 hover:text-navy-600"
+                      >
+                        <Edit className="h-4 w-4" />
+                      </button>
+                      <button
+                        onClick={() => handleDeleteListing(listing.id)}
+                        className="text-gray-400 hover:text-red-600"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+                  )}
                 </div>
                 
                 <h3 className="text-lg font-bold text-navy-900 mb-2">{listing.title}</h3>
@@ -532,7 +564,7 @@ const MarketplacePage = () => {
             <p className="text-gray-500">
               {searchTerm || filterType !== 'all' || filterCategory !== 'all' 
                 ? 'Try adjusting your search or filters'
-                : 'Get started by adding your first listing'
+                : 'No active listings available at the moment'
               }
             </p>
           </div>
