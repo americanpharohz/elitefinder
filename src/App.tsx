@@ -7,6 +7,7 @@ import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
+import MarketplacePage from './pages/MarketplacePage';
 
 console.log('📱 App component loading...');
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/testimonials" element={<TestimonialsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/marketplace" element={<MarketplacePage />} />
           </Routes>
         </main>
         <Footer />
